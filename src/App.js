@@ -1,6 +1,7 @@
 import { data } from "./data";
 import { useState } from "react";
-import Juego from "./Juego";
+import Juego from "./components/Juego";
+import "./App.css";
 function App() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState([]);
   const [inicio, setInicio] = useState(false);
@@ -9,7 +10,7 @@ function App() {
   const recortadoDeCategorias = new Set(extraerCategorias);
   const categorias = [...recortadoDeCategorias];
 
-  const evento = (e) => {
+  const selecionarCategoria = (e) => {
     let categoria = e.target.innerHTML;
     const seleccionada = data.filter((item) => item.categoria === categoria);
     setCategoriaSeleccionada(seleccionada.sort());
@@ -18,17 +19,15 @@ function App() {
   };
 
   return (
-    <div className="container d-flex justify-content-center text-center ">
+    <div className="container-app ">
       {!inicio ? (
-        <div className="d-flex flex-column">
-          <h1 className="p-3 border-bottom border-danger">
-            Para comenzar elige una categoria
-          </h1>
+        <div className="panel animate__animated animate__zoomIn">
+          <h1 className="comienzo-h1">Para comenzar elige una categoria</h1>
           {categorias.map((item) => (
             <button
               key={item}
-              className="btn btn-outline-primary text-dark fs-4 my-2"
-              onClick={evento}
+              className="btn-category"
+              onClick={selecionarCategoria}
             >
               {item}
             </button>

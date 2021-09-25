@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Progreso from "./Progreso";
 import Resultado from "./Resultado";
-
+import "./Juego.css";
 const Juego = ({ data, categoria, setInicio }) => {
   const [correcta, setCorrecta] = useState(0);
   const [incorrecta, setInorrecta] = useState(0);
@@ -31,7 +31,7 @@ const Juego = ({ data, categoria, setInicio }) => {
   };
   const totalPuntuacion = correcta + incorrecta;
   return (
-    <div className="w-75">
+    <div className="conteiner-juego animate__animated animate__zoomIn">
       {totalPuntuacion !== 100
         ? una.map((item) => (
             <div className="d-flex flex-column h-auto" key={item.pregunta}>
