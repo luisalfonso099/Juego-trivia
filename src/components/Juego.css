@@ -1,0 +1,25 @@
+.conteiner-juego{
+    width: 70%;
+    text-align: center;
+    margin: 25px;
+    border: 1px solid rgb(165, 228, 225);
+    padding: 20px;
+    background: linear-gradient(to right, #b4d5dd, rgb(231, 215, 215));
+}
+.pregunta{
+    padding: 0 0 20px 0;
+}
+.imagen{
+    max-width: 80%;
+    max-height: 250px;
+}
+.btn-preguntas{
+    background-color: rgba(160, 215, 236, 0.3);
+    border-radius: 9px;
+    padding: 10px;
+    margin-top: 15px;
+    font-size:x-large;
+}
+.btn-preguntas:hover{
+    background-color: rgb(23, 192, 214)
+}

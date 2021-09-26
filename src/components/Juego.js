@@ -32,24 +32,23 @@ const Juego = ({ data, categoria, setInicio }) => {
   const totalPuntuacion = correcta + incorrecta;
   return (
     <div className="conteiner-juego animate__animated animate__zoomIn">
-      {totalPuntuacion !== 100
-        ? una.map((item) => (
-            <div className="d-flex flex-column h-auto" key={item.pregunta}>
-              {item.imagen ? (
-                <img
-                  className="rounded h-25 my-4"
-                  alt="imagen de pregunta"
-                  src={item.imagen}
-                />
-              ) : (
-                <h1 className="fs-1 mb-5 fw-italic bg-warning text-light p-3">
-                  {item.categoria}
-                </h1>
-              )}
-              <h1>{item.pregunta}</h1>
-            </div>
-          ))
-        : null}
+      {totalPuntuacion !== 100 &&
+        una.map((item) => (
+          <div className="pregunta" key={item.pregunta}>
+            <h1 className="fs-1 mb-5 fw-italic bg-warning text-light p-3">
+              {item.categoria}
+            </h1>
+            {item.imagen && (
+              <img
+                className="imagen"
+                alt="imagen de pregunta"
+                src={item.imagen}
+              />
+            )}
+
+            <h2>{item.pregunta}</h2>
+          </div>
+        ))}
       {totalPuntuacion < 100 ? (
         <div className="progress">
           <div
@@ -73,7 +72,7 @@ const Juego = ({ data, categoria, setInicio }) => {
               <div key={respuestaS} className="d-flex flex-column">
                 <button
                   key={respuestaS}
-                  className="btn btn-outline-info  my-2 text-dark fs-4"
+                  className="btn-preguntas"
                   onClick={respuesta}
                 >
                   {respuestaS}

@@ -1,6 +1,6 @@
 .container-app{
     background-color: rgb(212, 230, 233);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
